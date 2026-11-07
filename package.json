@@ -1,0 +1,16 @@
+{
+  "name": "dsh",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "check": "node --check src/index.js && node --check src/page.js && node --check container/server.mjs && wrangler deploy --dry-run --outdir /tmp/dsh-cf-check"
+  },
+  "dependencies": {
+    "agents": "0.33.0",
+    "@cloudflare/sandbox": "1.0.3"
+  },
+  "devDependencies": {
+    "wrangler": "4.158.0"
+  }
+}
